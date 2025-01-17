@@ -12,21 +12,27 @@ std::vector<std::vector<char>> board(SIZE, std::vector<char>(SIZE, ' '));
  * readability.
  *
  * Example output for a 3x3 board:
- * X | O | X
- * ---------
- * O | X | O
- * ---------
- * X | O | X
+ *  -----------
+ * | X | O | X |
+ * |---+---+---|
+ * | O | X | O |
+ * |---+---+---|
+ * | X | O | X |
+ *  -----------
  */
 void printBoard() {
+  std::cout << " -----------" << std::endl;
   for (int i = 0; i < SIZE; ++i) {
+    std::cout << "| ";
     for (int j = 0; j < SIZE; ++j) {
-      std::cout << board[i][j];
-      if (j < SIZE - 1) std::cout << " | ";
+      std::cout << board[i][j] << " | ";
     }
     std::cout << std::endl;
-    if (i < SIZE - 1) std::cout << "---------" << std::endl;
+    if (i < SIZE - 1) {
+      std::cout << "|---+---+---|" << std::endl;
+    }
   }
+  std::cout << " -----------" << std::endl;
 }
 
 /**
